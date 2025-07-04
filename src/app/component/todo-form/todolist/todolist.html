@@ -1,6 +1,6 @@
 <div>
   <ol class="list-group list-group-numbered">
-    @for(task of Todolist(); track task.name) {
+    @for(task of taskList(); track task.name) {
     <li
       class="list-group-item d-flex justify-content-between align-items-start"
     >
@@ -8,10 +8,13 @@
         <div class="fw-bold">{{task?.name}}</div>
         {{task?.description}}
       </div>
-      <span class="badge text-bg-primary rounded-pill">14</span>
+      <span class="d-flex gap-2">
+        <button class="btn btn-outline-info" (click)="editTask(task)">edit</button>
+        <button class="btn btn-outline-danger"(click)="deleteTaskById(task)">delete</button>
+      </span>
     </li>
     }
-    @if (Todolist().length === 0) {
+    @empty{
       <p>No items in the list.</p>
     }
   </ol>

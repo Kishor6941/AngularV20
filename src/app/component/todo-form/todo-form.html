@@ -26,6 +26,6 @@
     </button>
   </form>
   <div class="mt-4">
-    <app-todolist [taskList]="taskList"></app-todolist>
+    <app-todolist [taskList]="taskList"  (deleteTask)="handleDeleteTask($event)"></app-todolist>
   </div>
 </div>

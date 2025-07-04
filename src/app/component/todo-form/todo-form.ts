@@ -12,10 +12,11 @@ import { CommonModule } from '@angular/common';
 export class TodoForm {
   taskName = signal<string>('');
   taskDescription = signal<string>('');
-  taskList = signal<{ name: string; description: string }[]>([]);
+  taskList = signal<{id:number, name: string; description: string }[]>([]);
 
   addTask() {
     const task = {
+      id : Date.now(),
       name: this.taskName(),
       description: this.taskDescription(),
     };
@@ -28,5 +29,10 @@ export class TodoForm {
 
     this.taskName.set('');
     this.taskDescription.set('');
+  }
+
+  handleDeleteTask(task: { id: number; name: string; description: string }) {
+    this.taskList.update((tasks) => tasks.filter(t => t.id !== task.id));
+    console.log('Task deleted:', task);
   }
 }
