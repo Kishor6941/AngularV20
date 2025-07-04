@@ -1,0 +1,16 @@
+.product {
+        border: 1px solid #ccc;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #888;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+      }
+      button:hover {
+        background-color: #eee;
+      }

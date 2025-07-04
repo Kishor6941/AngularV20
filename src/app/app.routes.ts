@@ -13,5 +13,9 @@ export const routes: Routes = [
   {
     path: 'todo',
     loadComponent:() => import('./component/todo-form/todo-form').then(m => m.TodoForm)
+  },
+  {
+    path : 'signal',
+    loadComponent: () => import('./signals/cart/cart').then(m => m.Cart)
   }  
 ];

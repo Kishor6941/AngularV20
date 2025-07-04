@@ -1,0 +1,19 @@
+<div class="container col-md-6">
+  <h2>🛒 Cart</h2>
+  <p>Total Items: {{ totalItems() }}</p>
+  <ul>
+    @for (item of items(); track $index) {
+    <li>{{ item.name }} - ₹{{ item.price }} × {{ item.qty }}</li>
+    }
+  </ul>
+  @if(totalItems() > 0) {
+  <p>Total Price: ₹{{ totalPrice() }}</p>
+  }
+  <button (click)="clear()">Clear Cart</button>
+
+  <hr />
+  <app-product
+    [products]="productList()"
+    (add)="addToCart($event)"
+  ></app-product>
+</div>

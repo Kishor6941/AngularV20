@@ -1,0 +1,7 @@
+<h3>Products</h3>
+@for (product of products; track $index) {
+<div class="mb-2 product">
+  {{ product.name }} - ₹{{ product.price }}
+  <button class="ms-2" (click)="add.emit(product)">Add to Cart</button>
+</div>
+}
