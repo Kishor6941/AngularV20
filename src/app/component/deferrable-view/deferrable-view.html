@@ -1,0 +1,25 @@
+<h1>Angular 'defer' Example</h1>
+<button (click)="toggleDetails()">Toggle Product Details</button>
+
+@defer (when showDetails()) {
+    <div class="product-details">
+        <h2>Product Details</h2>
+        <p>Here are the details of the product...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+}
+@placeholder {
+    <div class="">
+        <p>Loading product details...</p>
+    </div>
+}
+@loading {
+    <div class="loading">
+        <p>Loading...</p>
+    </div>
+}
+@error {
+    <div class="error">
+        <p>Error loading product details.</p>
+    </div>
+}

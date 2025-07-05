@@ -17,5 +17,17 @@ export const routes: Routes = [
   {
     path : 'signal',
     loadComponent: () => import('./signals/cart/cart').then(m => m.Cart)
-  }  
+  },
+  {
+    path: 'deferrable-view',
+    loadComponent: () => import('./component/deferrable-view/deferrable-view').then(m => m.DeferrableView)
+  },
+  {
+    path: 'control-flow',
+    loadComponent: () => import('./component/control-flow/control-flow').then(m => m.ControlFlow)
+  },
+  {
+    path: 'typed-forms',
+    loadComponent: () => import('./component/typed-form/typed-form').then(m => m.TypedForm)
+  } 
 ];
