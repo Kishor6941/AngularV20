@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PracDirective } from '../../directive/prac-directive';
 
 @Component({
   selector: 'app-typed-form',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, PracDirective],
   templateUrl: './typed-form.html',
   styleUrl: './typed-form.scss',
 })
