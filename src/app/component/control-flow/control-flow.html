@@ -1,1 +1,33 @@
-<p>control-flow works!</p>
+@for (item of productList; track item?.id) {
+    <div class="d-flex gap-4 align-items-center m-3">
+        <h3>{{ item.name }}</h3>
+        <p>Price: {{ item.price | currency:"INR" }}</p>
+        <p>Quantity: {{ item.qty }}</p>
+    </div>
+}
+
+<div>
+    @if (productList.length > 0) {
+        <p>Product list is not empty.</p>
+    } @else {
+        <p>No products available.</p>
+    }
+
+    @if (productList.length > 3) {
+        <p>More than 3 products available. if</p>
+    } @else {
+        <p>Less than or equal to 3 products available.</p>
+    }
+
+    @switch (productList.length ? true : false) {
+        @case (productList.length > 5) {
+            <p>More than 5 products available.</p>
+        }
+        @case (productList.length > 3) {
+            <p>More than 3 products available.</p>
+        }
+        @default {
+            <p>Less than or equal to 3 products available.</p>
+        }
+    }
+</div>
